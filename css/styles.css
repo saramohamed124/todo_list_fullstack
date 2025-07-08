@@ -1,11 +1,77 @@
+:root {
+  --main-blue: #0d6efd;
+}
+
 /* Global Styles */
 ul {
   list-style: none;
 }
+
+img {
+  max-width: 100% !important;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* Global Styles */
 
 /* Text Color */
 .text-purple {
   color: #6f42c1;
 }
+
 /* Text Color */
+
+/* Btn Auth */
+.btn-signup,
+.btn-login {
+  display: block;
+  width: 100%;
+  padding: 10px 25px;
+  font-weight: 500;
+  text-wrap: nowrap;
+  border-radius: 3px;
+  border: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.btn-login {
+  background-color: white;
+  border: 1px solid var(--main-blue);
+}
+
+.btn-signup,
+.btn-signup > * {
+  background-color: var(--main-blue);
+  color: white !important;
+}
+
+/* Btn Auth */
+
+.tools {
+  overflow: hidden; /* This is crucial to hide the duplicated content until it scrolls into view */
+}
+#tools_track {
+  white-space: nowrap; /* Prevents items from wrapping to the next line */
+  display: flex; /* Use flexbox to keep items in a row */
+  align-items: center;
+}
+#tools_track img {
+  display: inline-block; /* Treat images as inline blocks */
+  padding: 10px; /* Add some spacing between images */
+  box-sizing: border-box; /* Include padding in the element's total width */
+  flex-shrink: 0; /* Prevent images from shrinking */
+}
+.tools img {
+  width: 100px;
+  transition: filter 0.3s ease, opacity 0.3s ease; /* Smooth transition on hover */
+}
