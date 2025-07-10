@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/styles.css"/>
-
     <title>Tasks</title>
-
 </head>
 <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
         <div class="container-fluid">
             <p class="navbar-brand fs-1 fw-bold text-purple">TODO</p>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,39 +24,42 @@
                     <a class="nav-link fs-5 mx-2 cursor-pointer" href="./tasks.html">Tasks</a>
                 </li>
             </ul>
-            <div class="d-flex flex-row gap-2 mx-3">
-            <button class="btn-signup">
-                <a href="../../signup/signup.html">Sign Up</a></button>
-            <button class="btn-login"><a href="../../login/login.html">Login</a></button>
+            <div class="d-flex flex-row gap-2 mx-3" id="AuthBtns">
+                <button class="btn-signup">
+                    <a href="../../signup/signup.html">Sign Up</a></button>
+                <button class="btn-login"><a href="../../login/login.html">Login</a></button>
             </div>
-    </div>
+            <div class="d-flex flex-row mx-3 d-none" id="LogoutBtnContainer">
+                <button class="btn btn-danger" id="logoutButton">Logout</button>
+            </div>
+            </div>
     </nav>
 
-    <form class="d-flex mt-5 flex-column justify-content-center align-items-center w-75 m-auto" action="">
+    <form id="createTaskForm" class="d-flex mt-5 flex-column justify-content-center align-items-center w-75 m-auto">
         <div class="w-100 text-center mb-3">
-            <label for="exampleFormControlInput1" class="form-label fw-bold">Task Name</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Task Name">
+            <label for="taskNameInput" class="form-label fw-bold">Task Name</label>
+            <input type="text" class="form-control" id="taskNameInput" placeholder="Enter Your Task Name" required>
         </div>
-        <button class="btn btn-primary">Add New Task</button>
+        <p id="taskMessage" style="color: blue;"></p>
+        <button type="submit" class="btn btn-primary">Add New Task</button>
     </form>
-<table class="w-75 my-5 mx-auto table table-hover table-striped" style="border:1px solid #ddd;">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Task Name</th>
-      <th scope="col">status</th>
-      <th scope="col">#</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-  </tbody>
-</table>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+ <div id="tasksContainer" class="cards row gap-4 w-100 my-5 mx-auto justify-content-center align-items-center">
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+<script type="module">
+    const cards = document.querySelectorAll(".card");
+    console.log("Found cards:", cards.length, cards); // Check how many cards are found
+    const { animate, scroll } = Motion
+    cards.forEach((item) => {
+        scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
+            target: item,
+            offset: ["start end", "end end", "start start", "end start"],
+        })
+    })
+</script>
+    <script src="../../scripts/script.js"></script>
 </body>
 </html>

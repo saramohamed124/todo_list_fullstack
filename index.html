@@ -25,10 +25,13 @@
                     <a class="nav-link fs-5 mx-2 cursor-pointer" href="pages/tasks/tasks.html">Tasks</a>
                 </li>
             </ul>
-            <div class="d-flex flex-row gap-2 mx-3">
+            <div class="d-flex flex-row gap-2 mx-3" id="AuthBtns">
                 <button class="btn-signup">
-                    <a href="../signup/signup.html">Sign Up</a></button>
-                <button class="btn-login"><a href="./login/login.html">Login</a></button>
+                    <a href="../../signup/signup.html">Sign Up</a></button>
+                <button class="btn-login"><a href="../../login/login.html">Login</a></button>
+            </div>
+            <div class="d-flex flex-row mx-3 d-none" id="LogoutBtnContainer">
+                <button class="btn btn-danger" id="logoutButton">Logout</button>
             </div>
         </div>
     </nav>
@@ -52,7 +55,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-<script>
-</script>
+<script src="../scripts/script.js"></script>
 </body>
 </html>
